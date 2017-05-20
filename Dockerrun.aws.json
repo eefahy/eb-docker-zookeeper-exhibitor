@@ -1,0 +1,36 @@
+{
+  "AWSEBDockerrunVersion": 2,
+  "containerDefinitions": [
+    {
+      "name": "zookeeper-app",
+      "image": "mbabineau/zookeeper-exhibitor:3.4.6_1.5.5",
+      "essential": true,
+      "memory": 512,
+      "portMappings": [
+        {
+          "hostPort": 8181,
+          "containerPort": 8181
+        },
+        {
+          "hostPort": 2181,
+          "containerPort": 2181
+        },
+        {
+          "hostPort": 2888,
+          "containerPort": 2888
+        },
+        {
+          "hostPort": 3888,
+          "containerPort": 3888
+        }
+      ],
+      "environment": [
+        {
+          "name": "HOSTNAME",
+          "value": ""
+        }
+      ],
+      "mountPoints": []
+    }
+  ]
+}
